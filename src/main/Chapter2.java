@@ -19,9 +19,17 @@ public class Chapter2 {
 
 		// new
 		usuarios.forEach(new Consumer<User>() {
-			public void accept(User t) {
-				System.out.println(t.getNome());
+			public void accept(User u) {
+				System.out.println(u.getNome());
+
 			}
+		});
+
+		System.out.println("\nwith Lambda:");
+
+		usuarios.forEach((u) -> {
+			System.out.println(u.getNome());
+			u.tornaModerador();
 		});
 
 	}
