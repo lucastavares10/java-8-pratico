@@ -2,7 +2,6 @@ package main;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 
 import model.User;
 
@@ -17,15 +16,28 @@ public class Chapter2 {
 
 		List<User> usuarios = Arrays.asList(user1, user2, user3);
 
-		// new
-		usuarios.forEach(new Consumer<User>() {
-			public void accept(User u) {
-				System.out.println(u.getNome());
+//		for (User u : usuarios) {
+//			System.out.println(u.getNome());
+//		}
 
-			}
-		});
+//		Consumer<User> mostrador = new Consumer<User>() {
+//			public void accept(User u) {
+//				System.out.println(u.getNome());
+//			}
+//		};
+//		
+//		usuarios.forEach(mostrador);
+		
+		
 
-		System.out.println("\nwith Lambda:");
+//		usuarios.forEach(new Consumer<User>() {
+//			public void accept(User u) {
+//				System.out.println(u.getNome());
+//
+//			}
+//		});
+		
+		
 
 		usuarios.forEach((u) -> {
 			System.out.println(u.getNome());

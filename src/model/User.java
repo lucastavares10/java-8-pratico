@@ -10,6 +10,10 @@ public class User {
 		this.nome = nome;
 		this.moderador = false;
 	}
+	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getNome() {
 		return nome;

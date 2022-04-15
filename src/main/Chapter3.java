@@ -33,7 +33,6 @@ public class Chapter3 {
 		// Chapter 3.2
 
 		Validator<String> validateCEP = new Validator<String>() {
-
 			@Override
 			public boolean validate(String v) {
 				return v.matches("[0-9]{5}-[0-9]{3}");
