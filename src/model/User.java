@@ -10,7 +10,7 @@ public class User {
 		this.nome = nome;
 		this.moderador = false;
 	}
-	
+
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
@@ -29,6 +29,11 @@ public class User {
 
 	public boolean isModerador() {
 		return moderador;
+	}
+
+	@Override
+	public String toString() {
+		return "User [nome=" + nome + ", pontos=" + pontos + ", moderador=" + moderador + "]";
 	}
 
 }
