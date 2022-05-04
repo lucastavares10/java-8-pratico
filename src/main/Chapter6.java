@@ -3,7 +3,9 @@ package main;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.ToIntBiFunction;
 
 import model.User;
 
@@ -81,7 +83,31 @@ public class Chapter6 {
 
 		// referencing methods with params
 
-		users.forEach(System.out::println);
+		users.forEach(System.out::println);	
+				
+		//constructor reference
+		
+		
+		//supplier
+		
+//		Supplier<User> userFactory = User::new;
+//		User newUser = userFactory.get();
+		
+		//with args
+		
+		BiFunction<String, Integer, User> userFactory = User::new;
+		User newUser = userFactory.apply("João", 100);
+		
+		
+		//static methods
+		ToIntBiFunction<Integer, Integer> max2 = Math::max; //autoboxing
+		Integer maxValue =  max2.applyAsInt(100, 500);
+		System.out.println("maxValue " + maxValue);
+		
+		
+		
+		
+		
 
 	}
 
