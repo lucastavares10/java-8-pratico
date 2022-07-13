@@ -1,8 +1,10 @@
 package main;
 
+import static java.util.stream.Collectors.toSet;
+
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 import model.User;
 
@@ -29,14 +31,49 @@ public class Chapter7 {
 		List<User> users = Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11,
 				user12, user13);
 
-		users.sort(Comparator.comparing(User::getPontos).reversed()); // ordering
+		// users.sort(Comparator.comparing(User::getPontos).reversed()); // ordering
 
-		users.subList(0, 10).forEach(User::tornaModerador);
+		// users.subList(0, 10).forEach(User::tornaModerador);
 
-		users.forEach(u -> {
-			if (u.isModerador() == true)
-				System.out.println(u);
-		});
+		// for (User user : users) {
+		// if (user.getPontos() > 100) {
+		// user.tornaModerador();
+		// }
+		// }
+
+		// Stream<User> stream = users.stream();
+
+		// stream.filter(u -> u.getPontos() > 100);
+
+		// users.stream().filter(u -> u.getPontos() > 100).forEach(u -> {
+		// System.out.println(u);
+		// });
+
+		// users.stream().filter(u -> u.getPontos() >
+		// 100).forEach(User::tornaModerador);
+
+		// users.forEach(System.out::println);
+
+		// List<User> maisQue100 = new ArrayList<User>();
+
+		// users.stream().filter(u -> u.getPontos() > 100).forEach(maisQue100::add);
+
+		// maisQue100.forEach(System.out::println);
+
+		//List<User> maisQueCem = users.stream().filter(u -> u.getPontos() > 100).collect(toList());
+		
+		//maisQueCem.forEach(System.out::println);
+
+		//Set<User> maisQueCemSet = users.stream().filter(u -> u.getPontos() > 100).collect(toSet());
+		
+		//maisQueCemSet.forEach(System.out::println);
+		
+		User[] usersArray = users.stream().toArray(User[]::new);
+				
+		
+		
+		
+
 
 	}
 
